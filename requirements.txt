@@ -5,3 +5,4 @@ flake8-pie==0.15.0
 isort==5.9.3
 mypy==0.931
 pytest==7.0.1
+coverage
