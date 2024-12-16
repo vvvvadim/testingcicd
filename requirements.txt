@@ -1,8 +1,8 @@
-black==21.12b0
-flake8==4.0.1
-flake8-bugbear==22.1.11
-flake8-pie==0.15.0
-isort==5.9.3
-mypy==0.931
-pytest==7.0.1
-coverage
+black==24.10.0
+flake8==7.1.1
+flake8-bugbear==24.12.12
+flake8-pie==0.16.0
+isort==5.13.2
+mypy==1.13.0
+pytest==8.3.4
+coverage==7.6.9
