@@ -19,5 +19,5 @@ jobs:
           options: "--check --verbose"
           src: "./app"
           jupyter: true
-          version: "21.5b1"
+          version: "~= 22.0"
 
