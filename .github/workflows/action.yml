@@ -17,10 +17,13 @@ jobs:
         with:
           python-version: '3.12'
           architecture: 'x64'
+      - name: Test Docker Start
+        run: curl http://localhost:8000
+        run: curl http://localhost:8000/unique_notes
       - name: Install requirements
         run: pip install -r requirements.txt
       - name: Run tests
-        run: pytest tests/test_application.py
+        run: coverage run -m pytest tests/test_application.py
       - name: Tests report
         run: coverage report
       - name: Start test Code with black
