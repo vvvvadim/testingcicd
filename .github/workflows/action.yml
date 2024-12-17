@@ -12,7 +12,7 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       - name: Run Docker Compose
-        run: docker compose up -d
+        run: docker compose -f docker-compose.yml up -d
       - uses: actions/setup-python@v1
         with:
           python-version: '3.12'
