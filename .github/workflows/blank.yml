@@ -11,11 +11,12 @@ jobs:
     steps:
       # Check out the repository
       - uses: actions/checkout@v4
-
-      # Run Docker Compose Action
-      - uses: adambirds/docker-compose-action@v1.5.0
+      - uses: actions/setup-node@v3
         with:
-          compose-file: "./docker-compose.yml"
+          node-version: 19.4.0
+      - uses: ./
+        with:
+          compose-file: "docker-compose.yml"
           up-flags: "--build"
           down-flags: "--volumes"
           test-container: "test-container"
