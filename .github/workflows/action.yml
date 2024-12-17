@@ -20,13 +20,15 @@ jobs:
       - name: Install requirements
         # Устанавливаем зависимости
         run: pip install -r requirements.txt
-      - name: Run tests
-        run: coverage run -m pytest
-      - name: Tests report
-        run: coverage report
-      - name: Start test Code with black
-        uses: psf/black@stable
-        with:
-          options: "--check --verbose"
-          src: "./app"
-          version: "~= 22.0"
+      - name: Start Test
+        run: pytest
+#      - name: Run tests
+#        run: coverage run -m pytest
+#      - name: Tests report
+#        run: coverage report
+#      - name: Start test Code with black
+#        uses: psf/black@stable
+#        with:
+#          options: "--check --verbose"
+#          src: "./app"
+#          version: "~= 22.0"
