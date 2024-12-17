@@ -13,4 +13,11 @@ jobs:
         uses: docker/setup-buildx-action@v1
       - name: Run Docker Compose
         run: docker compose up -d
+      - name: Start test Code with black
+        uses: psf/black@stable
+        with:
+          options: "--check --verbose"
+          src: "./app"
+          jupyter: true
+          version: "21.5b1"
 
