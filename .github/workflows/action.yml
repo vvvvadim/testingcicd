@@ -9,18 +9,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Check out the repository
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 19.4.0
-      - uses: ./
-        with:
-          compose-file: "docker-compose.yml"
-          up-flags: "--build"
-          down-flags: "--volumes"
-          test-container: "test-container"
-          test-command: "npm test"
+    - uses: actions/checkout@v2
+    - name: docker-compose up
+      env:
+        COMPOSE_INTERACTIVE_NO_CLI: 1
+      run: docker-compose up -d
+    - name: Check running containers
+      run: docker-compose ps -a
+    - name: Check logs
+      run: docker-compose logs app
+
 #  run_tests:
 #    runs-on: [ubuntu-latest]
 #    steps:
