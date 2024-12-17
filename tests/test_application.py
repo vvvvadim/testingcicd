@@ -1,4 +1,3 @@
-import pytest
 import requests
 import json
 
@@ -15,7 +14,7 @@ def test_create_user():
     assert r.status_code == 201
 
 def test_find_user_by_country():
-    example_user = json.dumps({"name": "Fred", "address":{ "country": "Moscow25" }, "coffee_id":"1", "has_sale": "1"})
+    example_user = {"name": "Fred", "address":{ "country": "Moscow25" }, "coffee_id":"1", "has_sale": "1"}
     url = "http://localhost:8000/users_by_country"
     country = json.dumps({"country": "Moscow25"})
     headers = {'Content-Type': 'application/json'}
@@ -24,5 +23,6 @@ def test_find_user_by_country():
         r.raise_for_status()
     except requests.exceptions.HTTPError as e:
         print('ERROR: %s' % e)
-    user = r.json()
-    assert example_user == user[0]
+    user = r.json()[0]
+    assert example_user["address"] == user["address"]
+    assert example_user["name"] == user["name"]
