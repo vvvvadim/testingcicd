@@ -3,27 +3,23 @@ name: Run tests on any Push event
 # Они будт тестироваться перед сборкой
 on:
   push:
-    tags:
-      - '!refs/tags/*'
     branches:
       - '*'
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: docker-compose up
-      env:
-        COMPOSE_INTERACTIVE_NO_CLI: 1
-      run: docker-compose up -d
-    - name: Check running containers
-      run: docker-compose ps -a
-    - name: Check logs
-      run: docker-compose logs app
-    - name: Test with pytest
-      env:
-        COMPOSE_INTERACTIVE_NO_CLI: 1
-      run: docker-compose exec app pytest
+      # Check out the repository
+      - uses: actions/checkout@v4
+
+      # Run Docker Compose Action
+      - uses: adambirds/docker-compose-action@v1.5.0
+        with:
+          compose-file: "./docker/docker-compose.yml"
+          up-flags: "--build"
+          down-flags: "--volumes"
+          test-container: "test-container"
+          test-command: "npm test"
 #  run_tests:
 #    runs-on: [ubuntu-latest]
 #    steps:
