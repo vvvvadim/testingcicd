@@ -16,6 +16,8 @@ jobs:
       -
         run: docker compose up -d
       - name: Check Docker container
+        run: sleep 10
+      -
         run: docker ps -a
       -
         run: docker compose logs
