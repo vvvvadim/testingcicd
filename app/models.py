@@ -13,7 +13,7 @@ class Coffee(Base):
     title = Column(String(200), nullable=False)
     origin = Column(String(200))
     intensifier = Column(String(100))
-    notes = Column(ARRAY(String))
+    notes = Column(ARRAY(String(100)))
 
     def __repr__(self):
         return f"Coffee(id={self.id}),title={self.title}, origin={self.origin}, intensifier={self.intensifier}, notes={self.notes}"
