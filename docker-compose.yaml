@@ -1,11 +1,4 @@
 services:
-  app:
-    build:
-      context: .
-      dockerfile: app/Dockerfile
-    ports:
-      - "8000:8000"
-
   postgres:
     container_name: postgress
     image: postgres:latest
@@ -17,3 +10,10 @@ services:
       - logging_collector=on
     ports:
       - "5432:5432"
+
+  app:
+    build:
+      context: .
+      dockerfile: app/Dockerfile
+    ports:
+      - "8000:8000"
