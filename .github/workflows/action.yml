@@ -10,7 +10,7 @@ jobs:
       - uses: psf/black@stable
         with:
           options: "--check --verbose"
-          src: "./src"
+          src: "./app"
           use_pyproject: true
   Tests:
     runs-on: ubuntu-latest
