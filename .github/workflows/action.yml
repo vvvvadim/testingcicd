@@ -20,7 +20,7 @@ jobs:
       - uses: py-actions/flake8@v2
         with:
           path: "./app"
-          args: "--statistics --count"
+          args: "--statistics --count --ignore E501"
   LintsIsort:
     runs-on: ubuntu-latest
     steps:
