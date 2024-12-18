@@ -16,7 +16,9 @@ jobs:
       - name: Check Docker container
         run: docker ps -a
       -
-        run: docker logs backend
+        run: docker logs postgress
+      -
+        run: docker logs testingcicd-app-1
       - name: Test Docker Start
         run: curl http://127.0.0.1:8000
       -
