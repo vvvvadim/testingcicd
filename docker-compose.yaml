@@ -19,5 +19,3 @@ services:
       - logging_collector=on
     ports:
       - "5432:5432"
-    volumes:
-      - ./db:/var/lib/postgresql/data
