@@ -10,6 +10,8 @@ services:
       - logging_collector=on
     ports:
       - "5432:5432"
+    networks:
+      - my_network
 
   app:
     build:
@@ -17,3 +19,10 @@ services:
       dockerfile: app/Dockerfile
     ports:
       - "8000:8000"
+    depends_on:
+      - postgres
+    networks:
+      - my_network
+networks:
+  my_network:
+    driver: bridge
