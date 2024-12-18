@@ -7,10 +7,11 @@ jobs:
   Lints:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - uses: psf/black@stable
-        with:
-          options: "--check --verbose"
-          use_pyproject: false
+#        with:
+#          options: "--check --verbose"
+#          use_pyproject: false
 #  Tests:
 #    runs-on: ubuntu-latest
 #    steps:
