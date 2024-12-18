@@ -6,13 +6,13 @@ on:
 jobs:
   Lints:
     runs-on: ubuntu-latest
+    steps:
       - uses: psf/black@stable
         with:
           options: "--check --verbose"
           src: "./src"
           use_pyproject: true
-
-  Test:
+  Tests:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
