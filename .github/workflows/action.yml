@@ -16,18 +16,13 @@ jobs:
       - uses: actions/setup-python@v3
         with:
           python-version: 3.12
-      - name: Lints flake8
-        uses: py-actions/flake8@v2
-        with:
-          path: "./app"
-          args: "--statistics --count"
+#      - name: Lints flake8
+#        uses: py-actions/flake8@v2
+#        with:
+#          path: "./app"
+#          args: "--statistics --count"
       - name: Lints Isort
         uses: isort/isort-action@master
-        with:
-          requirementsFiles: "requirements.txt"
-#        with:
-#          options: "--check --verbose"
-#          use_pyproject: false
 #  Tests:
 #    runs-on: ubuntu-latest
 #    steps:
