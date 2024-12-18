@@ -38,7 +38,7 @@ jobs:
         with:
           path: "./app"
           mypy_version: "0.910"
-          requirements: "requirements.txt"
+          requirements_file: "requirements.txt"
           python_version: "3.12"
 
 #  Tests:
