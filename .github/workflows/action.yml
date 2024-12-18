@@ -18,16 +18,14 @@ jobs:
           python-version: 3.12
       - name: Install requirements
         run: pip install -r requirements.txt
-#      - name: Lints flake8
-#        uses: py-actions/flake8@v2
-#        with:
-#          path: "./app"
-#          args: "--statistics --count"
+      - name: Lints flake8
+        uses: py-actions/flake8@v2
+        with:
+          path: "./app"
+          args: "--statistics --count"
       - uses: actions/checkout@v3
       - name: Lints Isort
-        run: |
-          isort app/ --check-only --diff
-          isort app/
+        uses: isort/isort-action@v1
 
 #  Tests:
 #    runs-on: ubuntu-latest
