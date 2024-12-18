@@ -28,6 +28,12 @@ jobs:
       - uses: isort/isort-action@master
         with:
           sort-paths: "./app"
+  LintsMyPy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: jpetrucciani/mypy-check@master
+        with:
+          path: './app'
 
 #  Tests:
 #    runs-on: ubuntu-latest
