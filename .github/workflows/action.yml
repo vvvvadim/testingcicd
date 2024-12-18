@@ -19,7 +19,8 @@ jobs:
       - name: Lints flake8
         uses: py-actions/flake8@v2
         with:
-          options: "--statistics --count"
+          path: "./app"
+          args: "--statistics --count"
       - name: Lints Isort
         uses: isort/isort-action@master
         with:
