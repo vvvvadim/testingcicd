@@ -33,12 +33,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - run: cd app
       - name: Run Mypy
         uses: jashparekh/mypy-action@v2
         with:
-          path: './app'
+          path: '.'
           mypy_version: '0.910'
-          requirement_files: '.app/requirements.txt'
+          requirement_files: 'requirements.txt'
           python_version: '3.12'
 
 #  Tests:
