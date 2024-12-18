@@ -11,15 +11,11 @@ jobs:
         uses: actions/checkout@v2
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v1
       - name: Run Docker Compose
-        run: docker compose -f docker-compose.yml build
+        run: docker compose -f docker-compose.yaml build
       -
         run: docker compose up -d
       - name: Check Docker container
-        run: sleep 10
-      -
         run: docker ps -a
       -
         run: docker compose logs
