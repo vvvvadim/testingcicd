@@ -37,7 +37,7 @@ jobs:
       - name: Run Mypy
         uses: jashparekh/mypy-action@v2
         with:
-          path: 'app'
+          path: './app'
           mypy_version: '0.910'
           requirement_files: 'app/requirements.txt'
           python_version: '3.12'
