@@ -31,9 +31,16 @@ jobs:
   LintsMyPy:
     runs-on: ubuntu-latest
     steps:
-      - uses: jpetrucciani/mypy-check@master
-#        with:
-#          path: "./app"
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run Mypy
+        uses: jashparekh/mypy-action@v2
+        with:
+          path: '.'
+          mypy_version: '0.910'
+          mypy_flags: '--verbose'
+          mypy_config_file: 'mypy.ini'
+          requirement_files: 'requirements.txt'
 
 #  Tests:
 #    runs-on: ubuntu-latest
