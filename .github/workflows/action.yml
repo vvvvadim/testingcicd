@@ -12,7 +12,6 @@ jobs:
         with:
           options: "--check --verbose"
           src: "./app"
-      - run: ls -A
   LintsFlake8:
     runs-on: ubuntu-latest
     steps:
