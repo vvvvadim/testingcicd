@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: py-actions/flake8@v2
         with:
-          path: "./app"
+#          path: "./app"
           args: "--statistics --count"
   LintsIsort:
     runs-on: ubuntu-latest
