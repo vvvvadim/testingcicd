@@ -18,6 +18,8 @@ jobs:
           python-version: 3.12
       - name: Lints flake8
         uses: py-actions/flake8@v2
+        with:
+          options: "app/"
       - name: Lints Isort
         uses: isort/isort-action@master
         with:
