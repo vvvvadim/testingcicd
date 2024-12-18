@@ -1,3 +1,0 @@
-[tool.black]
-target-version = ["py312"]  # projects python version
-required-version = "24.8.0"  # required version of black to run
