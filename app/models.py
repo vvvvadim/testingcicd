@@ -1,5 +1,3 @@
-import typing
-
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
 from sqlalchemy.dialects.postgresql import ARRAY, JSON
 from sqlalchemy.orm import DeclarativeBase, relationship
