@@ -4,28 +4,29 @@ on:
     branches:
       - '*'
 jobs:
-  Lints:
+  LintsBlack:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: Lints Black
-        uses: psf/black@stable
+      - uses: psf/black@stable
         with:
           options: "--diff --verbose"
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v3
-        with:
-          python-version: 3.12
-      - name: Install requirements
-        run: pip install -r requirements.txt
-      - name: Lints flake8
-        uses: py-actions/flake8@v2
+#      - uses: actions/checkout@v2
+#      - uses: actions/setup-python@v3
+#        with:
+#          python-version: 3.12
+#      - name: Install requirements
+#        run: pip install -r requirements.txt
+  LintsFlake8:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: py-actions/flake8@v2
         with:
           path: "./app"
           args: "--statistics --count"
-      - uses: actions/checkout@v3
-      - name: Lints Isort
-        uses: isort/isort-action@v1
+  LintsIsort:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: isort/isort-action@v1
 
 #  Tests:
 #    runs-on: ubuntu-latest
