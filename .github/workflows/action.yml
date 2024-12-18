@@ -7,8 +7,15 @@ jobs:
   Lints:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v1
       - uses: psf/black@stable
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v3
+        with:
+          python-version: 3.12
+      - uses: isort/isort-action@master
+        with:
+          requirementsFiles: "requirements.txt"
 #        with:
 #          options: "--check --verbose"
 #          use_pyproject: false
