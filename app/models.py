@@ -15,7 +15,7 @@ class Coffee(Base):
     title = Column(String(200), nullable=False)
     origin = Column(String(200))
     intensifier = Column(String(100))
-    notes : Column[list[str]] = Column(ARRAY(String))
+    notes: Column[list[str]] = Column(ARRAY(String))
 
     def __repr__(self):
         return f"Coffee(id={self.id}),title={self.title}, origin={self.origin}, intensifier={self.intensifier}, notes={self.notes}"
