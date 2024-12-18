@@ -14,7 +14,6 @@ jobs:
       - uses: psf/black@stable
         with:
           options: "--check --verbose"
-          src: "_"
           use_pyproject: false
 #  Tests:
 #    runs-on: ubuntu-latest
