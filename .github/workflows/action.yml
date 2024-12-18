@@ -39,7 +39,7 @@ jobs:
           path: './app'
           mypy_version: '0.910'
           mypy_flags: '--verbose'
-          requirement_files: 'requirements.txt'
+          requirement_files: '.app/requirements.txt'
           python_version: '3.12'
 
 #  Tests:
