@@ -13,6 +13,8 @@ jobs:
         uses: docker/setup-buildx-action@v1
       - name: Run Docker Compose
         run: docker compose -f docker-compose.yaml up -d
+      - name: Check Docker container
+        run: docker ps -a
       - name: Test Docker Start
         run: curl http://127.0.0.1:8000
       -
