@@ -7,8 +7,6 @@ services:
       dockerfile: app/Dockerfile
     ports:
       - "8000:8000"
-    networks:
-      - my_network
 
   postgres:
     container_name: postgress
@@ -21,11 +19,5 @@ services:
       - logging_collector=on
     ports:
       - "5432:5432"
-    networks:
-      - my_network
     volumes:
       - ./db:/var/lib/postgresql/data
-
-networks:
-  my_network:
-    driver: bridge
