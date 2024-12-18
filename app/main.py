@@ -6,8 +6,14 @@ from sqlalchemy.orm import Session
 from flask import Flask, request, jsonify
 from models import Base, User, Coffee
 
+
+
+
 app = Flask(__name__)
 engine = create_engine('postgresql+psycopg2://postgres:postgres@postgress:5432/postgres', echo=True)
+
+
+
 
 NAME_URL = "https://random-data-api.com/api/v2/users?size=10?response_type=json"
 ADDRESS_URL = "https://random-data-api.com/api/address/random_address?size=10?response_type=json"
