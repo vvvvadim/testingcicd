@@ -22,6 +22,7 @@ jobs:
           args: "--statistics --count --ignore E501"
   LintsIsort:
     runs-on: ubuntu-latest
+    name: Isort
     steps:
       - uses: actions/checkout@v1
       - uses: isort/isort-action@master
