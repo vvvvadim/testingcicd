@@ -8,14 +8,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: psf/black@stable
+      - name: Lints Black
+        uses: psf/black@stable
         with:
           options: "--diff --verbose"
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v3
         with:
           python-version: 3.12
-      - uses: isort/isort-action@master
+      - name: Lints flake8
+        uses: py-actions/flake8@v2
+      - name: Lints Isort
+        uses: isort/isort-action@master
         with:
           requirementsFiles: "requirements.txt"
 #        with:
