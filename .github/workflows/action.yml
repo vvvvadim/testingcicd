@@ -14,7 +14,7 @@ jobs:
           src: "./app"
       - run: ls -A
   LintsFlake8:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v1
       - uses: py-actions/flake8@v2
@@ -38,7 +38,6 @@ jobs:
         with:
           path: './app'
           mypy_version: '0.910'
-          mypy_flags: '--verbose'
           requirement_files: '.app/requirements.txt'
           python_version: '3.12'
 
