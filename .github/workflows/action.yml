@@ -10,14 +10,8 @@ jobs:
       - uses: actions/checkout@v1
       - uses: psf/black@stable
         with:
-          options: "--diff --verbose"
+          options: "--check --verbose"
       - run: ls -A
-#      - uses: actions/checkout@v2
-#      - uses: actions/setup-python@v3
-#        with:
-#          python-version: 3.12
-#      - name: Install requirements
-#        run: pip install -r requirements.txt
   LintsFlake8:
     runs-on: ubuntu-latest
     steps:
@@ -30,9 +24,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: isort/isort-action@v1
+      - uses: isort/isort-action@master
         with:
-          path: "./app"
+          sort-paths: "./app"
 
 #  Tests:
 #    runs-on: ubuntu-latest
