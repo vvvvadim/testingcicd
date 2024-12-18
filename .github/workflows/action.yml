@@ -7,14 +7,9 @@ jobs:
   Lints:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-python@v1
-        with:
-          python-version: '3.12'
-          architecture: 'x64'
       - uses: psf/black@stable
         with:
           options: "--check --verbose"
-          src: "app/"
           use_pyproject: false
 #  Tests:
 #    runs-on: ubuntu-latest
