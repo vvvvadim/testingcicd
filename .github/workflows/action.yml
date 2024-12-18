@@ -15,7 +15,7 @@ jobs:
         with:
           options: "--check --verbose"
           src: "/app"
-          use_pyproject: true
+          use_pyproject: false
   Tests:
     runs-on: ubuntu-latest
     steps:
